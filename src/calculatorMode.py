@@ -5,7 +5,7 @@
 from .loancalculator import LoanCalculator
 
 
-def interactMode():
+def InteractMode():
     calculator = LoanCalculator()
     while True:
         print('\nWhat do you want to calculate?\n'

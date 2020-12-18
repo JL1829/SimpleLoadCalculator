@@ -3,7 +3,7 @@
 # Copyright: Johnny Lu
 # LICENSE: MIT
 import argparse
-from src.calculatorMode import interactMode
+from src.calculatorMode import InteractMode
 from src.calculatorMode import CLImode
 
 
@@ -17,7 +17,7 @@ def main():
 
     args = parser.parse_args()
     if not args.type and not args.payment and not args.principal and not args.periods and not args.interest:
-        interactMode()
+        InteractMode()
 
     else:
         CLImode(args=args)
