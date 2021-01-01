@@ -9,6 +9,7 @@ class LoanCalculator:
     """
     Load calculator
     """
+
     def __init__(self):
         self.principal = None
         self.annuity = None
@@ -50,9 +51,13 @@ class LoanCalculator:
         interest = interest / 100 / 12
         self.diff = []
         for i in range(1, self.period + 1):
-            self.diff.append(
-                math.ceil(self.principal / self.period + interest * (self.principal
-                                                                     - self.principal * (i - 1) / self.period))
-            )
+            self.diff.append(math.ceil(self.principal /
+                                       self.period +
+                                       interest *
+                                       (self.principal -
+                                        self.principal *
+                                        (i -
+                                         1) /
+                                        self.period)))
         self.overpayment = sum(self.diff) - self.principal
         return self.diff, self.overpayment

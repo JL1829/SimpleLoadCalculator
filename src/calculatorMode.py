@@ -23,7 +23,8 @@ def InteractMode():
             print("Enter the monthly payment:")
             calculator.annuity = int(input(">"))
             print("Enter the loan interest:")
-            period, overpayment = calculator.getPeriod(interest=float(input(">")))
+            period, overpayment = calculator.getPeriod(
+                interest=float(input(">")))
             year, month = divmod(period, 12)
             if year == 0:
                 print(f"It will take {month} months to repay this loan!\n"
@@ -35,8 +36,9 @@ def InteractMode():
                 print(f"It will take {year} years to repay this loan!\n"
                       f"Overpayment = {overpayment}")
             else:
-                print(f"It will take {year} years and {month} months to repay this loan!\n"
-                      f"Overpayment = {overpayment}")
+                print(
+                    f"It will take {year} years and {month} months to repay this loan!\n"
+                    f"Overpayment = {overpayment}")
 
         elif method == 'a':
             print("Enter the loan principal:")
@@ -44,7 +46,8 @@ def InteractMode():
             print("Enter the number of periods:")
             calculator.period = int(input(">"))
             print("Enter the load interest:")
-            payment, overpayment = calculator.getAnnuityAmount(interest=float(input(">")))
+            payment, overpayment = calculator.getAnnuityAmount(
+                interest=float(input(">")))
             print(f"Your monthly payment = {payment}!\n"
                   f"Overpayment = {overpayment}")
 
@@ -54,7 +57,8 @@ def InteractMode():
             print("Enter the number of periods:")
             calculator.period = int(input(">"))
             print("Enter the loan interest:")
-            principal, overpayment = calculator.getPrincipal(interest=float(input(">")))
+            principal, overpayment = calculator.getPrincipal(
+                interest=float(input(">")))
             print(f"Your loan principal = {principal}!\n"
                   f"Overpayment = {overpayment}")
 
@@ -64,7 +68,8 @@ def InteractMode():
             print('Enter the number of periods:')
             calculator.period = int(input(">"))
             print('Enter the loan interest:')
-            differentiated, overpayment = calculator.getDiff(interest=float(input(">")))
+            differentiated, overpayment = calculator.getDiff(
+                interest=float(input(">")))
             for month, payment in enumerate(differentiated):
                 print(f"Month: {month + 1}: payment is {payment}")
             print(f"\nOverpayment = {overpayment}")
@@ -115,8 +120,9 @@ def CLImode(args):
             print(f"It will take {year} years to repay this loan!\n"
                   f"Overpayment = {overpayment}")
         else:
-            print(f"It will take {year} years and {month} months to repay this loan!\n"
-                  f"Overpayment = {overpayment}")
+            print(
+                f"It will take {year} years and {month} months to repay this loan!\n"
+                f"Overpayment = {overpayment}")
 
     else:
         print("Incorrect parameters.")
